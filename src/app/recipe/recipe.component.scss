@@ -1,7 +1,25 @@
 /deep/ a:visited, a:hover, a:focus, a:active { text-decoration: none; color:red; }
-.headerimg {
-  width: 100%;
+
+.parallax-wrapper {
+  max-height: 100%;
+  overflow-x: hidden;
+  perspective: 1px;
+  perspective-origin: center top;
+  transform-style: preserve-3d;
 }
+
+.headerimg {
+  width: 101%;
+  position: relative;
+  vertical-align: top;
+  transform-origin: center top;
+  transform:
+    translateZ(-1px)
+    scale(1 + .5 * 2);
+}
+
 .markdown-container {
-  margin: 2em;
+  background: #303030;
+  transform: translateZ(0);
+  padding: 2em;
 }

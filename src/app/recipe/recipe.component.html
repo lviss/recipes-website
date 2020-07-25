@@ -1,8 +1,10 @@
-<picture *ngIf="haveImage">
-  <source srcset="assets/recipes/{{ recipeId }}.webp" type="image/webp">
-  <source srcset="assets/recipes/{{ recipeId }}.jpg" type="image/jpeg">
-  <img class="headerimg" src="assets/recipes/{{ recipeId }}.jpg" />
-</picture>
-<div class="markdown-container">
-  <markdown [src]="'/assets/recipes/' + recipeId + '.md'"></markdown>
+<div class="parallax-wrapper">
+  <picture *ngIf="haveImage">
+    <source srcset="assets/recipes/{{ recipeId }}.webp" type="image/webp">
+    <source srcset="assets/recipes/{{ recipeId }}.jpg" type="image/jpeg">
+    <img class="headerimg" src="assets/recipes/{{ recipeId }}.jpg" />
+  </picture>
+  <div class="markdown-container">
+    <markdown [src]="'/assets/recipes/' + recipeId + '.md'"></markdown>
+  </div>
 </div>
