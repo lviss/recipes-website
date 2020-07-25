@@ -1,0 +1,10 @@
+<div class="header">
+  <h1>Recipes</h1>
+  <h2>that Lane uses</h2>
+</div>
+<mat-card>Just for easy reference - I did not create these.</mat-card>
+<mat-nav-list>
+  <a mat-list-item *ngFor="let item of recipes" routerLink="/{{ item.path }}">
+    {{ item.path.replace(dashes,' ') | titlecase }}
+  </a>
+</mat-nav-list>

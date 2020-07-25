@@ -1,0 +1,11 @@
+[
+  { "path": "beer-cheese", "image": true },
+  { "path": "ceasar-dressing", "image": false },
+  { "path": "cheesy-chicken-enchilada-casserole", "image": false },
+  { "path": "chicken-bacon-ranch-casserole", "image": false },
+  { "path": "chocolate-souffle", "image": true },
+  { "path": "lemon-bars", "image": true },
+  { "path": "macaroni-salad", "image": true },
+  { "path": "scooby-snack", "image": false },
+  { "path": "teriyaki-chicken", "image": false }
+]
