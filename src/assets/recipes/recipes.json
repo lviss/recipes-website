@@ -4,6 +4,7 @@
   { "path": "cheesy-chicken-enchilada-casserole", "image": false },
   { "path": "chicken-bacon-ranch-casserole", "image": false },
   { "path": "chocolate-souffle", "image": true },
+  { "path": "greek-chicken-bites", "image": false },
   { "path": "lemon-bars", "image": true },
   { "path": "macaroni-salad", "image": true },
   { "path": "scooby-snack", "image": false },
