@@ -12,7 +12,7 @@
   }
 }
 
-/deep/ a:visited, a:hover, a:focus, a:active { text-decoration: none; color:red; }
+/deep/ a, a:visited, a:hover, a:focus, a:active { text-decoration: none; color:red; }
 
 .parallax-wrapper {
   max-height: 100%;
