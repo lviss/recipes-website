@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { MarkdownModule } from 'ngx-markdown';
 
@@ -34,6 +35,7 @@ import { ListComponent } from './list/list.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatSlideToggleModule,
     MatSnackBarModule,
     BrowserModule,
     AppRoutingModule,

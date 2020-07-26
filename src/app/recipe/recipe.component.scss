@@ -1,3 +1,17 @@
+@import '~@angular/material/theming';
+
+@mixin recipe-component-theme($theme) {
+
+  // Extract whichever individual palettes you need from the theme.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent); // Use mat-color to extract individual colors from a palette as necessary.
+  $background: map-get($theme, background);
+
+  .markdown-container {
+    background-color: mat-color($background, background);
+  }
+}
+
 /deep/ a:visited, a:hover, a:focus, a:active { text-decoration: none; color:red; }
 
 .parallax-wrapper {
@@ -19,7 +33,6 @@
 }
 
 .markdown-container {
-  background: #303030;
   transform: translateZ(0);
   padding: 2em;
 }

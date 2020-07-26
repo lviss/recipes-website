@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   dashes = /-/g;
   title = 'recipes';
   recipeNav = (recipeRoutes as any).default;
+  isDarkTheme: boolean = false;
 
   constructor(
     private router: Router,
@@ -26,8 +27,9 @@ export class AppComponent implements OnInit {
     if (swUpdate.isEnabled) {
       interval(60 * 60 * 1000).subscribe(() => swUpdate.checkForUpdate()
         .then(() => console.log('checking for updates')));
-      }
-      this.swUpdate.available.subscribe(event => this.promptUpdate());
+    }
+    this.swUpdate.available.subscribe(event => this.promptUpdate());
+    this.isDarkTheme = localStorage.getItem('isDarkTheme') === 'true' ?? false;
   }
 
   ngOnInit(): void {
@@ -43,5 +45,10 @@ export class AppComponent implements OnInit {
     snack.onAction().subscribe(() => {
       this.swUpdate.activateUpdate().then(() => document.location.reload());
     });
+  }
+
+  darkTheme(checked) {
+    this.isDarkTheme = checked;
+    localStorage.setItem('isDarkTheme', checked);
   }
 }

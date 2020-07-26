@@ -1,23 +1,25 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
-  <button mat-icon-button (click)="nav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <h1 routerLink="/">Recipes</h1>
-  <span class="spacer"></span>
-  <img src="/assets/icons/icon-72x72.png" class="mat-elevation-z1 icon" routerLink="/" />
-</mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav #nav mode="slide" [fixedInViewport]="true">
-    <h1>Lane's Recipes</h1>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/">Home</a>
-      <a mat-list-item *ngFor="let item of recipeNav" routerLink="/{{ item.path }}">
-        {{ item.path.replace(dashes,' ') | titlecase }}
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet>
-    </router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div [ngClass]="{'dark-theme': isDarkTheme}" class="mat-app-background">
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <button mat-icon-button (click)="nav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 routerLink="/">Recipes</h1>
+    <span class="spacer"></span>
+    <mat-slide-toggle [checked]="isDarkTheme" (change)="darkTheme($event.checked)"></mat-slide-toggle>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav #nav mode="slide" [fixedInViewport]="true">
+      <h1>Lane's Recipes</h1>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Home</a>
+        <a mat-list-item *ngFor="let item of recipeNav" routerLink="/{{ item.path }}">
+          {{ item.path.replace(dashes,' ') | titlecase }}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet>
+      </router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

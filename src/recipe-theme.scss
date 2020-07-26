@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+$recipe-theme-primary: mat-palette($mat-purple, 700, 300, 900);
+$recipe-theme-accent: mat-palette($mat-lime);
+$recipe-theme-warn: mat-palette($mat-red, 700);
+
+$recipe-dark-theme-primary: mat-palette($mat-green, 700, 300, 900);
+$recipe-dark-theme-accent: mat-palette($mat-lime);
+$recipe-dark-theme-warn: mat-palette($mat-red, 700);
+
+// create theme (use mat-dark-theme for themes with dark backgrounds)
+$recipe-theme: mat-light-theme(
+    $recipe-theme-primary,
+    $recipe-theme-accent,
+    $recipe-theme-warn
+);
+$recipe-dark-theme: mat-dark-theme(
+    $recipe-dark-theme-primary,
+    $recipe-dark-theme-accent,
+    $recipe-dark-theme-warn
+);
