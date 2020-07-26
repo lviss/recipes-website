@@ -4,7 +4,7 @@ import * as recipeRoutes from '../assets/recipes/recipes.json';
 import { SwUpdate } from '@angular/service-worker';
 import { interval } from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
     private router: Router,
     private swUpdate: SwUpdate,
     public snackBar: MatSnackBar,
-    private meta: Meta
+    private meta: Meta,
+    private titleService: Title
   ) { 
     // check for service worker updates
     if (swUpdate.isEnabled) {
@@ -36,8 +37,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
-      if (val)
+      if (val) {
         this.sidenav.close();
+        // update browser title
+        let pageTitle = this.router.url.substring(1, this.router.url.length).replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        if (pageTitle.length < 1) pageTitle = 'List';
+        this.titleService.setTitle('Recipe - ' + pageTitle);
+      }
     });
   }
 
