@@ -4,6 +4,7 @@ import * as recipeRoutes from '../assets/recipes/recipes.json';
 import { SwUpdate } from '@angular/service-worker';
 import { interval } from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private swUpdate: SwUpdate,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private meta: Meta
   ) { 
     // check for service worker updates
     if (swUpdate.isEnabled) {
@@ -50,5 +52,6 @@ export class AppComponent implements OnInit {
   darkTheme(checked) {
     this.isDarkTheme = checked;
     localStorage.setItem('isDarkTheme', checked);
+    this.meta.updateTag({ content: checked ? '#388e3c' : '#7B1FA2' }, 'name=theme-color');
   }
 }
