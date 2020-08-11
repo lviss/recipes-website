@@ -7,6 +7,7 @@
 
 // import our custom theme
 @import 'recipe-theme.scss';
+@import 'app/app.component.scss';
 @import 'app/recipe/recipe.component.scss';
 
 // specify theme class eg: <body class="recipe-theme"> ... </body>
@@ -14,12 +15,14 @@
 
   // use our theme with angular-material-theme mixin
   @include angular-material-theme($recipe-theme);
+  @include app-component-theme($recipe-theme);
   @include recipe-component-theme($recipe-theme);
 
 }
 
 .dark-theme {
   @include angular-material-theme($recipe-dark-theme);
+  @include app-component-theme($recipe-dark-theme);
   @include recipe-component-theme($recipe-dark-theme);
 }
 

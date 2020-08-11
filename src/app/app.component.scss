@@ -1,3 +1,20 @@
+@import '~@angular/material/theming';
+
+@mixin app-component-theme($theme) {
+
+  // Extract whichever individual palettes you need from the theme.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent); // Use mat-color to extract individual colors from a palette as necessary.
+  $background: map-get($theme, background);
+
+  .mat-list-item.selected, .mat-list-item.selected:focus, .mat-list-item.selected:active {
+    background-color: mat-color($primary);
+  }
+  .mat-list-item.selected .mat-list-item-content {
+    color: mat-color($background, background);
+  }
+}
+
 :host {
   height: 100%;
 }

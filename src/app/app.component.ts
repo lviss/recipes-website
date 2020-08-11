@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import * as recipeRoutes from '../assets/recipes/recipes.json';
 import { SwUpdate } from '@angular/service-worker';
 import { interval } from 'rxjs';
+import { map, filter} from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Meta, Title } from '@angular/platform-browser';
@@ -16,6 +17,8 @@ import { MediaMatcher } from '@angular/cdk/layout';
 export class AppComponent implements OnInit, OnDestroy {
 
   @ViewChild('sidenav') sidenav: MatSidenav;
+
+  currentNavItem;
   dashes = /-/g;
   title = 'recipes';
   recipeNav = (recipeRoutes as any).default;
@@ -47,15 +50,16 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe((val) => {
-      if (val) {
-        if (this.mobileQuery.matches)
-          this.sidenav.close();
-        // update browser title
-        let pageTitle = this.router.url.substring(1, this.router.url.length).replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-        if (pageTitle.length < 1) pageTitle = 'List';
-        this.titleService.setTitle('Recipe - ' + pageTitle);
-      }
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(event => {
+      this.currentNavItem = this.recipeNav.find(i => '/' + i.path === this.router.url);
+      if (this.mobileQuery.matches)
+        this.sidenav.close();
+      // update browser title
+      let pageTitle = this.router.url.substring(1, this.router.url.length).replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      if (pageTitle.length < 1) pageTitle = 'List';
+      this.titleService.setTitle('Recipe - ' + pageTitle);
     });
   }
 
