@@ -2,7 +2,7 @@
   <picture *ngIf="haveImage">
     <source srcset="assets/recipes/{{ recipeId }}.webp" type="image/webp">
     <source srcset="assets/recipes/{{ recipeId }}.jpg" type="image/jpeg">
-    <img class="headerimg" src="assets/recipes/{{ recipeId }}.jpg" />
+    <img class="headerimg" src="assets/recipes/{{ recipeId }}.jpg" (load)="imgLoaded = true" [class.loaded]="imgLoaded" />
   </picture>
   <div class="markdown-container">
     <markdown [src]="'/assets/recipes/' + recipeId + '.md'"></markdown>

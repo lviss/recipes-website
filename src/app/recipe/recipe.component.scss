@@ -24,12 +24,21 @@
 
 .headerimg {
   width: 101%;
+  /* this is for a paralax effect */
   position: relative;
   vertical-align: top;
   transform-origin: center top;
   transform:
     translateZ(-1px)
     scale(1 + .5 * 2);
+  max-height: 0;
+  /* this is for animating a slide in effect */
+  transition: max-height 0.4s ease-in;
+  object-fit: cover;
+}
+
+.headerimg.loaded {
+  max-height: 600px;
 }
 
 .markdown-container {
