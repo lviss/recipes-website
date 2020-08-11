@@ -11,6 +11,7 @@ export class RecipeComponent implements OnInit {
 
   recipeId: string;
   haveImage: boolean;
+  imgLoaded: boolean;
   constructor(
     private router: Router
   ) { }
