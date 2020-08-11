@@ -25,6 +25,7 @@ mat-sidebar-container {
 }
 mat-sidenav-container {
   height: 100%;
+  width: 100%;
 }
 .icon {
   height: 2em;
@@ -32,4 +33,11 @@ mat-sidenav-container {
 }
 .spacer {
   flex: 1;
+}
+
+@media (min-width: 1000px) {
+  mat-sidenav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
 }
