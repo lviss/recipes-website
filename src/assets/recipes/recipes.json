@@ -2,7 +2,7 @@
   { "path": "beer-cheese", "image": true },
   { "path": "ceasar-dressing", "image": false },
   { "path": "cheesy-chicken-enchilada-casserole", "image": false },
-  { "path": "chicken-bacon-ranch-casserole", "image": false },
+  { "path": "chicken-bacon-ranch-casserole", "image": true },
   { "path": "chocolate-souffle", "image": true },
   { "path": "greek-chicken-bites", "image": false },
   { "path": "lemon-bars", "image": true },
