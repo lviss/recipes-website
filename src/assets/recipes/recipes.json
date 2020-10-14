@@ -1,4 +1,5 @@
 [
+  { "path": "bacon-wrapped-asparagus", "image": true },
   { "path": "beer-cheese", "image": true },
   { "path": "ceasar-dressing", "image": false },
   { "path": "cheesy-chicken-enchilada-casserole", "image": false },
