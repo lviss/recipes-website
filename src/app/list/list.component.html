@@ -1,10 +1,11 @@
 <div class="header">
   <h1>Recipes</h1>
   <h2>that Lane uses</h2>
+  <h3>Just for easy reference - I did not create these. If you make any of these, take a photo and send it to me :) If it's better than what I have, I'll put your photo here.</h3>
 </div>
-<mat-card>Just for easy reference - I did not create these.</mat-card>
-<mat-nav-list>
-  <a mat-list-item *ngFor="let item of recipes" routerLink="/{{ item.path }}">
-    {{ item.path.replace(dashes,' ') | titlecase }}
-  </a>
-</mat-nav-list>
+<mat-grid-list cols="2" rowHeight="1.5:1">
+  <mat-grid-tile *ngFor="let item of recipes" routerLink="/{{ item.path }}">
+    <app-photo [recipe]="item"></app-photo>
+    <mat-grid-tile-footer>{{ item.path.replace(dashes,' ') | titlecase }}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>

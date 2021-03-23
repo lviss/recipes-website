@@ -13,7 +13,8 @@
       <mat-nav-list>
         <a mat-list-item routerLink="/" [class.selected]="!currentNavItem?.path">Home</a>
         <a mat-list-item *ngFor="let item of recipeNav" routerLink="/{{ item.path }}" [class.selected]="item.path === currentNavItem?.path">
-          {{ item.path.replace(dashes,' ') | titlecase }}
+          <app-photo [recipe]="item"></app-photo>
+          <h3 matLine>{{ item.path.replace(dashes,' ') | titlecase }}</h3>
         </a>
       </mat-nav-list>
     </mat-sidenav>

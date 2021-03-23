@@ -44,6 +44,12 @@ mat-sidenav-container {
   height: 100%;
   width: 100%;
 }
+mat-sidenav mat-nav-list img {
+  height: 2em;
+  width: 2em;
+  margin-left: 1em;
+  border-radius: 50%;
+}
 .icon {
   height: 2em;
   margin-right: .5em;

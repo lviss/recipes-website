@@ -16,17 +16,20 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { MarkdownModule } from 'ngx-markdown';
 
 import { RecipeComponent } from './recipe/recipe.component';
 import { ListComponent } from './list/list.component';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeComponent,
-    ListComponent
+    ListComponent,
+    PhotoComponent
   ],
   imports: [
     MatSidenavModule,
@@ -37,6 +40,7 @@ import { ListComponent } from './list/list.component';
     MatCardModule,
     MatSlideToggleModule,
     MatSnackBarModule,
+    MatGridListModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
