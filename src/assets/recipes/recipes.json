@@ -8,6 +8,7 @@
   { "path": "chocolate-souffle", "image": true },
   { "path": "greek-chicken-bites", "image": true },
   { "path": "lemon-bars", "image": true },
+  { "path": "limoncello", "image": true },
   { "path": "macaroni-salad", "image": true },
   { "path": "scooby-snack", "image": false },
   { "path": "teriyaki-chicken", "image": false }
