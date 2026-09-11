@@ -26,6 +26,14 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production
 
+      - name: Set up Node.js for deploy
+        uses: actions/setup-node@v4
+        with:
+          # action-hosting-deploy shells out to `npx firebase-tools`, which requires
+          # Node >=20; the build step above needs Node 14 for node-sass 4.14, so we
+          # switch Node versions after the build has produced dist/recipes.
+          node-version: '20'
+
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
