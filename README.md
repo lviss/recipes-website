@@ -29,3 +29,26 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Run in docker
+
+```
+docker-compose build && docker-compose up -d
+```
+
+get a shell with ng and firebase available:
+
+```
+docker exec -it recipes-website-recipewebsite-1 bash
+```
+
+### update firebase
+
+from the docker shell:
+
+```
+ng build
+firebase login
+curl <login url> (from another shell)
+firebase deploy
+```

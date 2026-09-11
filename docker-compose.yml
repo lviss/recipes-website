@@ -1,0 +1,14 @@
+version: '3'
+services:
+  recipewebsite:
+    build: .
+    command: ng serve --host 0.0.0.0
+    #command: sleep 999999999
+    volumes:
+      - .:/recipewebsite
+    ports:
+      - "5002:5000"
+      - "9006:9005" # port for firebase authentication
+      - "4201:4200" # port which will serve the webapp during development
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t

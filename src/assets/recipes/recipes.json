@@ -3,6 +3,7 @@
   { "path": "beer-cheese", "image": true },
   { "path": "butter-chicken", "image": true },
   { "path": "ceasar-dressing", "image": false },
+  { "path": "ceviche", "image": false },
   { "path": "cheesy-chicken-enchilada-casserole", "image": false },
   { "path": "chicken-bacon-ranch-casserole", "image": true },
   { "path": "chocolate-souffle", "image": true },
@@ -10,6 +11,7 @@
   { "path": "lemon-bars", "image": true },
   { "path": "limoncello", "image": true },
   { "path": "macaroni-salad", "image": true },
+  { "path": "moms-spaghetti-sauce", "image": false },
   { "path": "scooby-snack", "image": false },
   { "path": "teriyaki-chicken", "image": false }
 ]
