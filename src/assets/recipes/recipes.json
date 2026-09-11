@@ -3,7 +3,7 @@
   { "path": "beer-cheese", "image": true },
   { "path": "butter-chicken", "image": true },
   { "path": "ceasar-dressing", "image": false },
-  { "path": "ceviche", "image": false },
+  { "path": "ceviche", "image": true },
   { "path": "cheesy-chicken-enchilada-casserole", "image": false },
   { "path": "chicken-bacon-ranch-casserole", "image": true },
   { "path": "chocolate-souffle", "image": true },
