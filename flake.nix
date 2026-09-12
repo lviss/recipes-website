@@ -22,6 +22,12 @@
         {
           default = pkgs.mkShell {
             packages = [ pkgs.nodejs-14_x ];
+
+            # Puts the project's own @angular/cli (per package.json, not nixpkgs') on PATH
+            # after `npm install`, so a bare `ng` resolves like it would under `npm run`.
+            shellHook = ''
+              export PATH="$PWD/node_modules/.bin:$PATH"
+            '';
           };
         });
     };
