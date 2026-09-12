@@ -29,12 +29,13 @@
   vertical-align: top;
   transform-origin: center top;
   transform:
-    translateZ(-1px)
-    scale(1 + .5 * 2);
+    translateZ(-0.15px)
+    scale(1.15);
   max-height: 0;
   /* this is for animating a slide in effect */
   transition: max-height 0.4s ease-in;
   object-fit: cover;
+  object-position: center;
 }
 
 .headerimg.loaded {

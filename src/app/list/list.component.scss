@@ -5,6 +5,10 @@
 .header {
   text-align: center;
 }
+.grid-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 app-photo {
   width: 100%;
   height: 100%;
@@ -18,4 +22,16 @@ app-photo {
   object-fit: cover;
   height: inherit;
   width: inherit;
+}
+::ng-deep mat-grid-tile {
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  }
 }

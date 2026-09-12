@@ -3,9 +3,11 @@
   <h2>that Lane uses</h2>
   <h3>Just for easy reference - I did not create these. If you make any of these, take a photo and send it to me :) If it's better than what I have, I'll put your photo here.</h3>
 </div>
-<mat-grid-list cols="2" rowHeight="1.5:1">
-  <mat-grid-tile *ngFor="let item of recipes" routerLink="/{{ item.path }}">
-    <app-photo [recipe]="item"></app-photo>
-    <mat-grid-tile-footer>{{ item.path.replace(dashes,' ') | titlecase }}</mat-grid-tile-footer>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="grid-wrapper">
+  <mat-grid-list [cols]="cols$ | async" rowHeight="1.5:1" gutterSize="16px">
+    <mat-grid-tile *ngFor="let item of recipes" routerLink="/{{ item.path }}">
+      <app-photo [recipe]="item"></app-photo>
+      <mat-grid-tile-footer>{{ item.path.replace(dashes,' ') | titlecase }}</mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
