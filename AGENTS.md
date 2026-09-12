@@ -17,6 +17,11 @@ This file is the project's committed home for project-intrinsic agent knowledge:
   (a Firebase/GCP service-account JSON) — must exist as a repo secret or the workflow fails.
 - `docker-compose.yml` / `Dockerfile` / `dockerfile-dev-env` provide an optional local dev
   container (`docker-compose build && docker-compose up -d`); see README "Run in docker".
+- `flake.nix` provides an alternative local dev shell (`nix develop`) pinning Node 14 via
+  nixpkgs `nixos-22.11` (the last release carrying `nodejs-14_x`, since Node 14 was later
+  dropped from nixpkgs as EOL) — `npm install` and `npm start` work inside it without any
+  native build toolchain. This doesn't replace the Docker dev environment above; use
+  whichever fits.
 
 ## Maintaining this file
 
